@@ -14,26 +14,26 @@ sudo -i
 ```
 
 - Update các gói lên bản mới nhất và cài đặt git:
-``
+```
 apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get install git -y
-``
+```
 
 - Tải git về:
-``
+```
 git clone https://github.com/Kaitiz/OpenStack-Tools.git
 mv OpenStack-Tools/Stein-OVS/ /root/stein/
 cd stein/ && chmod +x *
-``
+```
 
 ### Thực hiện trên Controller
 
 - Cấu hình lại network:
 Chạy lệnh cài đặt:
-``
+```
 apt update && apt install ifupdown -y
-``
+```
 Cấu hình IP:
-``
+```
 cat << EOF > /etc/network/interfaces
 # NIC Loopback
 auto lo
@@ -53,31 +53,31 @@ iface ens33 inet static
 address 10.10.10.130
 netmask 255.255.255.0
 EOF
-``
+```
 
 Thiết lập sử dụng IP được cấu hình từ ifupdown:
-``
+```
 ifdown --force ens3 lo && ifup -a
-``
+```
 
 Gỡ netplan:
-``
+```
 systemctl stop networkd-dispatcher
 systemctl disable networkd-dispatcher
 systemctl mask networkd-dispatcher
 apt-get purge nplan netplan.io -y
-``
+```
 
 Cấu hình DNS thành 8.8.8.8:
-``
+```
 nano /etc/systemd/resolved.conf
 service systemd-resolved restart
-``
+```
 
 - Chỉnh sửa lại thông tin trong file `config.sh` cho phù hợp, sau đó chạy lệnh cài đặt trên node controller:
-``
+```
 cd stein/ && ./ctl-all.sh
-``
+```
 
 - Truy cập vào horizon với địa chỉ `http://172.18.4.130/horizon` để quan sát tiếp!
 
@@ -85,11 +85,11 @@ cd stein/ && ./ctl-all.sh
 
 - Cấu hình lại network:
 Chạy lệnh cài đặt:
-``
+```
 apt update && apt install ifupdown -y
-``
+```
 Cấu hình IP:
-``
+```
 cat << EOF > /etc/network/interfaces
 # NIC Loopback
 auto lo
@@ -109,41 +109,41 @@ iface ens33 inet static
 address 10.10.10.131
 netmask 255.255.255.0
 EOF
-``
+```
 
 Thiết lập sử dụng IP được cấu hình từ ifupdown:
-``
+```
 ifdown --force ens3 lo && ifup -a
-``
+```
 
 Gỡ netplan:
-``
+```
 systemctl stop networkd-dispatcher
 systemctl disable networkd-dispatcher
 systemctl mask networkd-dispatcher
 apt-get purge nplan netplan.io -y
-``
+```
 
 Cấu hình DNS thành 8.8.8.8:
-``
+```
 nano /etc/systemd/resolved.conf
 service systemd-resolved restart
-``
+```
 
 - Chạy lệnh cài đặt trên node compute1:
-``
+```
 cd stein/ && ./com1-all.sh
-``
+```
 
 ### Thực hiện trên Compute2
 
 - Cấu hình lại network:
 Chạy lệnh cài đặt:
-``
+```
 apt update && apt install ifupdown -y
-``
+```
 Cấu hình IP:
-``
+```
 cat << EOF > /etc/network/interfaces
 # NIC Loopback
 auto lo
@@ -163,28 +163,28 @@ iface ens33 inet static
 address 10.10.10.132
 netmask 255.255.255.0
 EOF
-``
+```
 
 Thiết lập sử dụng IP được cấu hình từ ifupdown:
-``
+```
 ifdown --force ens3 lo && ifup -a
-``
+```
 
 Gỡ netplan:
-``
+```
 systemctl stop networkd-dispatcher
 systemctl disable networkd-dispatcher
 systemctl mask networkd-dispatcher
 apt-get purge nplan netplan.io -y
-``
+```
 
 Cấu hình DNS thành 8.8.8.8:
-``
+```
 nano /etc/systemd/resolved.conf
 service systemd-resolved restart
-``
+```
 
 - Chạy lệnh cài đặt trên node compute2:
-``
+```
 cd stein/ && ./com2-all.sh
-``
+```
