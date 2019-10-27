@@ -9,9 +9,9 @@
 ## 1. Các bước thực hiện
 
 - Đăng nhập vào tài khoản root:
-``
+```
 sudo -i
-``
+```
 
 - Update các gói lên bản mới nhất và cài đặt git:
 ``
