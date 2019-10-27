@@ -57,7 +57,8 @@ EOF
 
 Thiết lập sử dụng IP được cấu hình từ ifupdown:
 ```
-ifdown --force ens3 lo && ifup -a
+ifdown --force ens33 lo && ifup -a
+ifdown --force ens32 lo && ifup -a
 ```
 
 Gỡ netplan:
@@ -113,7 +114,8 @@ EOF
 
 Thiết lập sử dụng IP được cấu hình từ ifupdown:
 ```
-ifdown --force ens3 lo && ifup -a
+ifdown --force ens33 lo && ifup -a
+ifdown --force ens32 lo && ifup -a
 ```
 
 Gỡ netplan:
@@ -167,7 +169,8 @@ EOF
 
 Thiết lập sử dụng IP được cấu hình từ ifupdown:
 ```
-ifdown --force ens3 lo && ifup -a
+ifdown --force ens33 lo && ifup -a
+ifdown --force ens32 lo && ifup -a
 ```
 
 Gỡ netplan:
