@@ -6,7 +6,7 @@
 
 ![IP-Planning.jpg](/images/IP-Planning.jpg)
 
-### C. Các bước thực hiện
+### C. CÁC BƯỚC THỰC HIỆN
 
 - Đăng nhập vào tài khoản root:
 ```
