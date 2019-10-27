@@ -75,6 +75,11 @@ nano /etc/systemd/resolved.conf
 service systemd-resolved restart
 ```
 
+Khởi động lại máy ảo:
+```
+init 6
+```
+
 - Chỉnh sửa lại thông tin trong file `config.sh` cho phù hợp, sau đó chạy lệnh cài đặt trên node controller:
 ```
 cd stein/ && ./ctl-all.sh
@@ -132,6 +137,11 @@ nano /etc/systemd/resolved.conf
 service systemd-resolved restart
 ```
 
+Khởi động lại máy ảo:
+```
+init 6
+```
+
 - Chạy lệnh cài đặt trên node compute1:
 ```
 cd stein/ && ./com1-all.sh
@@ -185,6 +195,11 @@ Cấu hình DNS thành 8.8.8.8:
 ```
 nano /etc/systemd/resolved.conf
 service systemd-resolved restart
+```
+
+Khởi động lại máy ảo:
+```
+init 6
 ```
 
 - Chạy lệnh cài đặt trên node compute2:
