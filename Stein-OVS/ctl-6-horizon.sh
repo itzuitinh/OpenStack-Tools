@@ -10,6 +10,24 @@ horizon_install () {
 	apt install openstack-dashboard -y
 }
 
+function redirect_web () {
+echocolor "Creating redirect page"
+sleep 5
+filehtml=/var/www/html/index.html
+test -f $filehtml.orig || cp $filehtml $filehtml.orig
+rm $filehtml
+touch $filehtml
+cat << EOF >> $filehtml
+<html>
+<head>
+<META HTTP-EQUIV="Refresh" Content="0.5; URL=http://$CTL1_IP_NIC2/horizon">
+</head>
+<body>
+<center> <h1>OpenStack Dashboard</h1> </center>
+</body>
+</html>
+EOF
+}
 
 # Function edit the /etc/openstack-dashboard/local_settings.py file
 horizon_config () {
@@ -72,3 +90,11 @@ horizon_config
 
 # Restart installation
 horizon_restart
+
+echocolor #================================#
+echo "LOGIN INFORMATION IN HORIZON"
+echo "URL: http://$CTL1_IP_NIC2/horizon"
+echo "Domain: Default"
+echo "User: admin or demo"
+echo "Password: $ADMIN_PASS"
+echocolor #================================#
