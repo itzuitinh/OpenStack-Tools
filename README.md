@@ -6,7 +6,7 @@
 
 ![IP-Planning.jpg](/images/IP-Planning.jpg)
 
-## 1. Các bước thực hiện
+### C. Các bước thực hiện
 
 - Đăng nhập vào tài khoản root:
 ```
@@ -25,7 +25,7 @@ mv OpenStack-Tools/Stein-OVS/ /root/stein/
 cd stein/ && chmod +x *
 ```
 
-### Thực hiện trên Controller
+## Thực hiện trên Controller
 
 - Cấu hình lại network:
 Chạy lệnh cài đặt:
@@ -81,7 +81,7 @@ cd stein/ && ./ctl-all.sh
 
 - Truy cập vào horizon với địa chỉ `http://172.18.4.130/horizon` để quan sát tiếp!
 
-### Thực hiện trên Compute1
+## Thực hiện trên Compute1
 
 - Cấu hình lại network:
 Chạy lệnh cài đặt:
@@ -135,7 +135,7 @@ service systemd-resolved restart
 cd stein/ && ./com1-all.sh
 ```
 
-### Thực hiện trên Compute2
+## Thực hiện trên Compute2
 
 - Cấu hình lại network:
 Chạy lệnh cài đặt:
