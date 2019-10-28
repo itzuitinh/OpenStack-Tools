@@ -22,6 +22,7 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get in
 ```
 git clone https://github.com/Kaitiz/OpenStack-Tools.git
 mv OpenStack-Tools/Stein-OVS/ /root/stein/
+rm -rf OpenStack-Tools
 cd stein/ && chmod +x *
 ```
 
