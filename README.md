@@ -91,7 +91,7 @@ rm -rf /var/www/html/index.html
 cat << EOF >> /var/www/html/index.html
 <html>
 <head>
-<META HTTP-EQUIV="Refresh" Content="0.5; URL=http://$CTL_EXT_IP/horizon">
+<META HTTP-EQUIV="Refresh" Content="0.5; URL=http://172.18.4.130/horizon">
 </head>
 <body>
 <center> <h1>OpenStack Dashboard</h1> </center>
