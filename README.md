@@ -85,6 +85,21 @@ init 6
 cd stein/ && ./ctl-all.sh
 ```
 
+- Tạo index.html để redirect về Dashboard:
+```
+rm -rf /var/www/html/index.html
+cat << EOF >> /var/www/html/index.html
+<html>
+<head>
+<META HTTP-EQUIV="Refresh" Content="0.5; URL=http://$CTL_EXT_IP/horizon">
+</head>
+<body>
+<center> <h1>OpenStack Dashboard</h1> </center>
+</body>
+</html>
+EOF
+```
+
 - Truy cập vào horizon với địa chỉ `http://172.18.4.130/horizon` để quan sát tiếp!
 
 ## Thực hiện trên Compute1
